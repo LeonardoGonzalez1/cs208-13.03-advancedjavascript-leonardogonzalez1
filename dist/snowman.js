@@ -42,11 +42,35 @@ function drawSnowText(canvas) {
 }
 
 function drawSnowman(canvas) {
-   // TODO: Complete the function
+   let context = canvas.getContext("2d");
 
+   context.fillStyle = "white";
+
+   // Bottom circle
+   context.beginPath();
+   context.arc(150, 200, 50, 0, Math.PI * 2);
+   context.fill();
+
+   // Middle circle
+   context.beginPath();
+   context.arc(150, 120, 40, 0, Math.PI * 2);
+   context.fill();
+
+   // Top circle
+   context.beginPath();
+   context.arc(150, 60, 25, 0, Math.PI * 2);
+   context.fill();
 }
 
 function drawSingleFlake(canvas, x, y) {
-   // TODO: Complete the function
+   let context = canvas.getContext("2d");
 
+   context.beginPath();
+   context.moveTo(x, y);
+   context.lineTo(x + flakeSize / 2, y + flakeSize / 2);
+   context.lineTo(x, y + flakeSize);
+   context.lineTo(x - flakeSize / 2, y + flakeSize / 2);
+
+   context.fillStyle = "#eee";
+   context.fill();
 }
